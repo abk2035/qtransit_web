@@ -1,0 +1,299 @@
+# ============================================================
+#  QTransit — .gitignore
+#  Couvre : Web (Vite/React/Node), API (FastAPI/Python), Mobile (Flutter)
+# ============================================================
+
+# ────────────────────────────────────────────────────────────
+# SÉCURITÉ — Ne jamais committer ces fichiers
+# ────────────────────────────────────────────────────────────
+
+# Variables d'environnement (secrets, clés API, mots de passe)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Clés privées & certificats
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Tokens, secrets et configurations sensibles
+secrets/
+secrets.json
+*_secret*
+*_private*
+credentials.json
+service-account*.json
+firebase-adminsdk*.json
+google-services.json
+GoogleService-Info.plist
+
+# Sauvegardes de bases de données
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# ────────────────────────────────────────────────────────────
+# WEB — Vite / React / Node.js
+# ────────────────────────────────────────────────────────────
+
+# Dépendances
+web/node_modules/
+node_modules/
+
+# Build output
+web/dist/
+web/build/
+web/.vite/
+
+# Logs
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+web/pnpm-debug.log*
+npm-debug.log*
+
+# Cache
+web/.eslintcache
+web/.stylelintcache
+web/.cache/
+
+# TypeScript build info
+web/tsconfig.tsbuildinfo
+web/*.tsbuildinfo
+
+# Storybook build
+web/storybook-static/
+
+# ────────────────────────────────────────────────────────────
+# API — FastAPI / Python
+# ────────────────────────────────────────────────────────────
+
+# Environnements virtuels Python
+api/.venv/
+api/venv/
+api/env/
+api/.env/
+.venv/
+venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Distribution / packaging
+api/dist/
+api/build/
+api/*.egg-info/
+api/.eggs/
+*.egg
+*.whl
+MANIFEST
+
+# Tests & coverage
+api/.pytest_cache/
+api/.coverage
+api/coverage.xml
+api/htmlcov/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# mypy / pyright
+api/.mypy_cache/
+api/.pyright/
+.mypy_cache/
+
+# Alembic (migrations) — conserver les fichiers de migration
+# mais ignorer les bases temporaires
+api/alembic.ini.local
+
+# Logs FastAPI/Uvicorn
+api/*.log
+api/logs/
+
+# ────────────────────────────────────────────────────────────
+# MOBILE — Flutter / Dart
+# ────────────────────────────────────────────────────────────
+
+# Build Flutter
+mobile/build/
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+
+# Packages Dart/Flutter
+mobile/.packages
+
+# Fichiers générés
+mobile/*.g.dart
+mobile/*.freezed.dart
+mobile/**/*.g.dart
+mobile/**/*.freezed.dart
+
+# iOS
+mobile/ios/Pods/
+mobile/ios/.symlinks/
+mobile/ios/Flutter/Flutter.framework
+mobile/ios/Flutter/Flutter.podspec
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/Flutter/app.flx
+mobile/ios/Flutter/app.zip
+mobile/ios/ServiceDefinitions.json
+mobile/ios/*.mode1v3
+mobile/ios/*.mode2v3
+mobile/ios/*.perspectivev3
+mobile/ios/*.xcworkspace
+mobile/ios/xcuserdata/
+
+# Android
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/captures/
+mobile/android/.externalNativeBuild/
+mobile/android/.cxx/
+mobile/android/key.properties
+
+# macOS / Desktop Flutter
+mobile/macos/Flutter/GeneratedPluginRegistrant.swift
+mobile/macos/Flutter/ephemeral/
+
+# Dart analysis
+mobile/.dart_tool/
+
+# ────────────────────────────────────────────────────────────
+# SYSTÈME D'EXPLOITATION
+# ────────────────────────────────────────────────────────────
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ────────────────────────────────────────────────────────────
+# ÉDITEURS ET IDEs
+# ────────────────────────────────────────────────────────────
+
+# VSCode
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.code-snippets
+.history/
+# Conserver les extensions recommandées et les configs partagées
+!.vscode/extensions.json
+
+# JetBrains (IntelliJ, PyCharm, WebStorm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Sublime Text
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ────────────────────────────────────────────────────────────
+# OUTILS DE DÉVELOPPEMENT
+# ────────────────────────────────────────────────────────────
+
+# Docker (fichiers locaux de configuration sensibles)
+docker-compose.override.yml
+.docker/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.terraform/
+.terraform.lock.hcl
+
+# Ansible
+*.retry
+
+# Fichiers de logs généraux
+*.log
+logs/
+log/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.swp
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ────────────────────────────────────────────────────────────
+# OUTILS DE QUALITÉ / CI
+# ────────────────────────────────────────────────────────────
+
+# Sonar
+.sonar/
+.scannerwork/
+
+# Coverage reports
+lcov.info
+*.lcov
+
+# ────────────────────────────────────────────────────────────
+# DOCUMENTATION générée
+# ────────────────────────────────────────────────────────────
+doc/_build/
+doc/site/
